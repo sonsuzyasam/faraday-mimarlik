@@ -1,0 +1,393 @@
+```html
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faraday Mimarlık | Biyolojik Kalkan ve Elektrik Güvenliği</title>
+    <!-- Tailwind CSS ve FontAwesome -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    },
+                    colors: {
+                        darkBg: '#050811',      
+                        cardBg: '#0B132B',      
+                        accentCyan: '#48CAE4',  
+                        accentGreen: '#06D6A0', 
+                        lightText: '#CDD6E2'    
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #050811;
+            scroll-behavior: smooth;
+        }
+        /* Faraday Kafesi Kafes Deseni Efekti */
+        .mesh-bg {
+            background-image: linear-gradient(rgba(72, 202, 228, 0.05) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(72, 202, 228, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .text-glow {
+            text-shadow: 0 0 15px rgba(72, 202, 228, 0.4);
+        }
+    </style>
+</head>
+<body class="text-lightText antialiased mesh-bg">
+
+    <!-- 1. HEADER / NAV BAR -->
+    <header class="fixed w-full top-0 z-50 bg-darkBg/90 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-lg bg-accentCyan/10 border border-accentCyan/30 flex items-center justify-center">
+                    <i class="fa-solid fa-shield-halved text-accentCyan text-xl"></i>
+                </div>
+                <span class="font-serif text-xl font-bold text-white tracking-wide">FARADAY <span class="text-accentCyan">MİMARLIK</span></span>
+            </div>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#tehlike" class="hover:text-accentCyan transition-colors">Risk Analizi</a>
+                <a href="#cozumler" class="hover:text-accentCyan transition-colors">Kalkanlama Modelleri</a>
+                <a href="#guvenlik" class="hover:text-accentCyan transition-colors">Elektrik Güvenliği</a>
+                <a href="#b2b" class="hover:text-accentGreen transition-colors text-accentGreen">İç Mimarlar İçin</a>
+            </nav>
+            <a href="https://wa.me/905000000000?text=Merhaba,%20Faraday%20Mimarlık%20web%20sitenizden%20ulaşıyorum.%20Evimde%20radyasyon%20ve%20topraklama%20testi%20yaptırmak%20istiyorum." 
+               target="_blank" 
+               class="px-5 py-2.5 bg-accentCyan/10 hover:bg-accentCyan/20 text-accentCyan border border-accentCyan/30 rounded-lg text-sm font-semibold transition-all duration-300">
+                <i class="fa-brands fa-whatsapp mr-2 text-lg"></i>Test Randevusu
+            </a>
+        </div>
+    </header>
+
+    <!-- 2. HERO SECTION -->
+    <section class="relative pt-32 pb-24 md:pt-48 md:pb-36 overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(72,202,228,0.08),transparent_40%)]"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-7 space-y-8 text-left">
+                    <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accentGreen/10 border border-accentGreen/20 text-accentGreen text-xs font-semibold uppercase tracking-wider">
+                        <span class="w-2 h-2 rounded-full bg-accentGreen animate-pulse"></span> Biyolojik Koruma ve Altyapı
+                    </span>
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-white font-bold leading-tight">
+                        Çocuğunuz Gece <br>Boyunca <span class="text-accentCyan text-glow">Görünmez Radyasyona</span> Mı Maruz Kalıyor?
+                    </h1>
+                    <p class="text-lg text-lightText/80 max-w-xl">
+                        Wi-Fi, 5G dalgaları ve duvar arkası elektrik sızıntılarından arındırılmış, çocuk nörolojisine uygun, saf ve derin bir uyku kozası tasarlıyoruz. Türkiye'nin ilk entegre Faraday odası ve elektrik güvenlik şartnamesi hizmetiyle tanışın.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://wa.me/905000000000?text=Radyasyon%20ve%20topraklama%20testi%20talep%20ediyorum." 
+                           target="_blank" 
+                           class="px-8 py-4 bg-accentCyan hover:bg-accentCyan/90 text-darkBg font-bold text-center rounded-xl transition-all shadow-lg shadow-accentCyan/20">
+                            <i class="fa-solid fa-gauge mr-2"></i>Ücretsiz Ev Testi Talep Et
+                        </a>
+                        <a href="#cozumler" 
+                           class="px-8 py-4 bg-white/5 hover:bg-white/10 text-white text-center border border-white/10 rounded-xl transition-all font-semibold">
+                            Uygulama Modelleri
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Interaktif Risk Simülatörü -->
+                <div class="md:col-span-5 bg-cardBg/80 border border-white/5 rounded-3xl p-8 backdrop-blur-sm relative">
+                    <h3 class="font-serif text-xl font-bold text-white mb-6"><i class="fa-solid fa-circle-nodes text-accentCyan mr-2"></i>Oda Risk Simülatörü</h3>
+                    <p class="text-xs text-lightText/60 mb-6">Aşağıdaki cihazları açıp kapatarak odadaki radyasyon seviyesini ve melatonin (uyku hormonu) seviyesini görün:</p>
+                    
+                    <div class="space-y-4">
+                        <!-- Switch 1 -->
+                        <div class="flex items-center justify-between p-3.5 bg-darkBg/50 rounded-xl border border-white/5">
+                            <span class="text-sm font-medium"><i class="fa-solid fa-wifi mr-2.5 text-red-400"></i>Oda İçi Wi-Fi Modemi</span>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" id="wifiSim" class="sr-only peer" checked onchange="updateSimulator()">
+                                <div class="w-11 h-6 bg-white/10 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-accentCyan"></div>
+                            </label>
+                        </div>
+                        <!-- Switch 2 -->
+                        <div class="flex items-center justify-between p-3.5 bg-darkBg/50 rounded-xl border border-white/5">
+                            <span class="text-sm font-medium"><i class="fa-solid fa-tower-cell mr-2.5 text-red-400"></i>Yakın Baz İstasyonu</span>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" id="cellSim" class="sr-only peer" checked onchange="updateSimulator()">
+                                <div class="w-11 h-6 bg-white/10 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-accentCyan"></div>
+                            </label>
+                        </div>
+                        <!-- Switch 3 -->
+                        <div class="flex items-center justify-between p-3.5 bg-darkBg/50 rounded-xl border border-white/5">
+                            <span class="text-sm font-medium"><i class="fa-solid fa-plug mr-2.5 text-red-400"></i>Baş Ucu Prizleri (Kirli Elektrik)</span>
+                            <label class="relative inline-flex inline-flex items-center cursor-pointer">
+                                <input type="checkbox" id="plugSim" class="sr-only peer" checked onchange="updateSimulator()">
+                                <div class="w-11 h-6 bg-white/10 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-accentCyan"></div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Göstergeler -->
+                    <div class="mt-8 pt-6 border-t border-white/5 space-y-4">
+                        <div>
+                            <div class="flex justify-between text-xs mb-1.5">
+                                <span class="text-lightText/70">Elektromanyetik Radyasyon (EMF)</span>
+                                <span id="emfText" class="font-bold text-red-500">ÇOK YÜKSEK (8.4 µW/cm²)</span>
+                            </div>
+                            <div class="w-full h-2 bg-white/5 rounded-full overflow-hidden">
+                                <div id="emfBar" class="h-full bg-red-500 transition-all duration-300" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs mb-1.5">
+                                <span class="text-lightText/70">Doğal Melatonin (Büyüme/Uyku) Hormonu</span>
+                                <span id="melatoninText" class="font-bold text-red-400">Ciddi Derecede Baskılanmış (-42%)</span>
+                            </div>
+                            <div class="w-full h-2 bg-white/5 rounded-full overflow-hidden">
+                                <div id="melatoninBar" class="h-full bg-red-400 transition-all duration-300" style="width: 35%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. RISK DETAY VE TEŞHİS -->
+    <section id="tehlike" class="py-24 border-t border-white/5 bg-darkBg/50 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="font-serif text-3xl md:text-4xl text-white font-bold">Görünmeyen Dalgalar, Gerçek Riskler</h2>
+                <p class="text-lightText/70">Çocuklarımızın sinir sistemi gelişim aşamasındadır. Kafatası kemikleri yetişkinlere göre daha ince olduğundan, elektromanyetik radyasyondan iki kat daha fazla etkilenirler.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 bg-cardBg/40 border border-white/5 rounded-2xl space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center">
+                        <i class="fa-solid fa-brain text-red-400 text-xl"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white">Nörolojik Gelişim Engeli</h4>
+                    <p class="text-sm text-lightText/70 leading-relaxed">Elektromanyetik radyasyon, beyne "gündüz" sinyali vererek melatonini baskılar. Bu durum çocuklarda derin uyku fazını kesintiye uğratarak odaklanma ve öğrenme güçlüğü yaratır.</p>
+                </div>
+                <div class="p-8 bg-cardBg/40 border border-white/5 rounded-2xl space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center">
+                        <i class="fa-solid fa-plug-circle-exclamation text-red-400 text-xl"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white">Türkiye'deki Topraklama Krizi</h4>
+                    <p class="text-sm text-lightText/70 leading-relaxed">Bina stokumuzun %70'inde topraklama hattı yoktur veya direnci çok yüksektir. Prizlerdeki elektrik kaçakları duvarlardan doğrudan yatağa sızarak kirli elektrik alanı oluşturur.</p>
+                </div>
+                <div class="p-8 bg-cardBg/40 border border-white/5 rounded-2xl space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center">
+                        <i class="fa-solid fa-shield-cat text-red-400 text-xl"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white">Doğal Koruma Yetersizliği</h4>
+                    <p class="text-sm text-lightText/70 leading-relaxed">İnternette satılan basit tüller veya kıyafetler topraklanmadığı için manyetik alanı çekerek daha da tehlikeli bir anten etkisi yaratabilir. Bilimsel ve topraklanmış mühendislik şarttır.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. KALKANLAMA MODELLERİ -->
+    <section id="cozumler" class="py-24 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-20">
+                <span class="text-accentCyan font-semibold text-xs uppercase tracking-wider">Nasıl Koruyoruz?</span>
+                <h2 class="font-serif text-3xl md:text-4xl text-white font-bold">Faraday Mimarlık Kalkanlama Modelleri</h2>
+                <p class="text-lightText/70">Evinizin mimari yapısına ve bütçenize en uygun bilimsel kalkanlama çözümlerini sunuyoruz.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Model 1 -->
+                <div class="bg-cardBg/30 border border-white/5 rounded-2xl overflow-hidden hover:border-accentCyan/30 transition-all group flex flex-col h-full">
+                    <div class="p-8 space-y-6 flex-grow">
+                        <div class="flex justify-between items-start">
+                            <h4 class="font-serif text-xl font-bold text-white">Karbon/Bakır Boya Zırhı</h4>
+                            <span class="px-2.5 py-1 rounded bg-accentCyan/10 text-accentCyan text-xs font-semibold">Görünmez</span>
+                        </div>
+                        <p class="text-sm text-lightText/70 leading-relaxed">Duvar boyasının hemen altına uygulanan özel karbon-bakır astar boyadır. Kuruduktan sonra topraklama hattına bağlanır ve üzerine dilediğiniz renk duvar boyası sürülür.</p>
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex items-center gap-2 text-lightText/80"><i class="fa-solid fa-check text-accentCyan"></i>%99.9 EMF Radyasyon Koruması</li>
+                            <li class="flex items-center gap-2 text-lightText/80"><i class="fa-solid fa-check text-accentCyan"></i>Duvar Arkasında Sıfır Görünürlük</li>
+                            <li class="flex items-center gap-2 text-lightText/80"><i class="fa-solid fa-check text-accentCyan"></i>1-2 Gün Uygulama Süresi</li>
+                        </ul>
+                    </div>
+                    <div class="p-8 border-t border-white/5 bg-darkBg/50 text-center">
+                        <a href="https://wa.me/905000000000?text=Karbon%20boya%20zırhı%20bilgisi%20almak%20istiyorum." target="_blank" class="w-full inline-block py-2.5 bg-accentCyan/10 hover:bg-accentCyan/20 text-accentCyan rounded-lg text-sm font-semibold transition-all">Detaylı Bilgi Al</a>
+                    </div>
+                </div>
+
+                <!-- Model 2 -->
+                <div class="bg-cardBg/30 border border-accentCyan/30 rounded-2xl overflow-hidden shadow-lg shadow-accentCyan/5 relative flex flex-col h-full">
+                    <div class="absolute top-0 right-0 bg-accentCyan text-darkBg text-xs font-bold px-3 py-1 rounded-bl-lg uppercase tracking-wider">En Çok Tercih Edilen</div>
+                    <div class="p-8 space-y-6 flex-grow">
+                        <div class="flex justify-between items-start">
+                            <h4 class="font-serif text-xl font-bold text-white">Faraday Duvar Tülü</h4>
+                            <span class="px-2.5 py-1 rounded bg-accentGreen/10 text-accentGreen text-xs font-semibold">Ömürlük</span>
+                        </div>
+                        <p class="text-sm text-lightText/70 leading-relaxed">Alçıpan veya sıva altına döşenen nikel/bakır dokuma esnek metal örgü sistemidir. Çelik kadar güçlü ve topraklama direnci mükemmel olan profesyonel çözümdür.</p>
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex items-center gap-2 text-lightText/80"><i class="fa-solid fa-check text-accentGreen"></i>%99.99 Sinyal Kesme Performansı</li>
+                            <li class="flex items-center gap-2 text-lightText/80"><i class="fa-solid fa-check text-accentGreen"></i>Fiziksel Darbelere Dayanıklı Yapı</li>
+                            <li class="flex items-center gap-2 text-lightText/80"><i class="fa-solid fa-check text-accentGreen"></i>Mikro-Ağ Teknolojisi</li>
+                        </ul>
+                    </div>
+                    <div class="p-8 border-t border-white/5 bg-darkBg/50 text-center">
+                        <a href="https://wa.me/905000000000?text=Faraday%20duvar%20tülü%20bilgisi%20almak%20istiyorum." target="_blank" class="w-full inline-block py-2.5 bg-accentCyan hover:bg-accentCyan/90 text-darkBg rounded-lg text-sm font-bold transition-all">Detaylı Bilgi Al</a>
+                    </div>
+                </div>
+
+                <!-- Model 3 -->
+                <div class="bg-cardBg/30 border border-white/5 rounded-2xl overflow-hidden hover:border-accentCyan/30 transition-all group flex flex-col h-full">
+                    <div class="p-8 space-y-6 flex-grow">
+                        <div class="flex justify-between items-start">
+                            <h4 class="font-serif text-xl font-bold text-white">Zırhlı Yatak Kapsülü</h4>
+                            <span class="px-2.5 py-1 rounded bg-white/10 text-white/80 text-xs font-semibold">Mobil</span>
+                        </div>
+                        <p class="text-sm text-lightText/70 leading-relaxed">Yatağı tamamen içine alan, gümüş ve bakır liflerle dokunmuş lüks cibinlik tasarımıdır. Tadilat istemeyen kiracılar veya hızlı kurulum arzulayanlar için idealdir.</p>
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex items-center gap-2 text-lightText/80"><i class="fa-solid fa-check text-accentCyan"></i>1 Saatte Kurulum, Sıfır İnşaat</li>
+                            <li class="flex items-center gap-2 text-lightText/80"><i class="fa-solid fa-check text-accentCyan"></i>Taşınabilir / Mobil Yapı</li>
+                            <li class="flex items-center gap-2 text-lightText/80"><i class="fa-solid fa-check text-accentCyan"></i>%98 Sinyal Blokajı</li>
+                        </ul>
+                    </div>
+                    <div class="p-8 border-t border-white/5 bg-darkBg/50 text-center">
+                        <a href="https://wa.me/905000000000?text=Zırhlı%20yatak%20kapsülü%20bilgisi%20almak%20istiyorum." target="_blank" class="w-full inline-block py-2.5 bg-accentCyan/10 hover:bg-accentCyan/20 text-accentCyan rounded-lg text-sm font-semibold transition-all">Detaylı Bilgi Al</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. ELEKTRİK GÜVENLİĞİ VE TEKNİK ŞARTNAME -->
+    <section id="guvenlik" class="py-24 border-t border-white/5 bg-darkBg/40">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-5 relative">
+                    <div class="p-8 bg-cardBg rounded-3xl border border-white/5 relative z-10 space-y-6">
+                        <div class="flex items-center gap-3">
+                            <div class="w-3 h-3 rounded-full bg-accentGreen animate-pulse"></div>
+                            <span class="text-xs font-bold uppercase text-accentGreen">Güvenlik Kontrol Noktaları</span>
+                        </div>
+                        <h4 class="font-serif text-2xl font-bold text-white">Elektrik Check-Up Raporu</h4>
+                        <p class="text-sm text-lightText/80">Faraday kafesi uygulamadan önce, evinizin can güvenliği testlerini yapıyoruz:</p>
+                        
+                        <div class="space-y-3 text-xs">
+                            <div class="flex items-center justify-between p-3 bg-darkBg rounded-lg border border-white/5">
+                                <span class="text-lightText/80"><i class="fa-solid fa-shield text-accentCyan mr-2"></i>Kaçak Akım Rölesi (30mA) Testi</span>
+                                <span class="text-accentGreen font-bold">AKTİF</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-darkBg rounded-lg border border-white/5">
+                                <span class="text-lightText/80"><i class="fa-solid fa-plug text-accentCyan mr-2"></i>Priz Kutup Bağlantı Doğrulaması</span>
+                                <span class="text-accentGreen font-bold">HATASIZ</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-darkBg rounded-lg border border-white/5">
+                                <span class="text-lightText/80"><i class="fa-solid fa-bolt text-accentCyan mr-2"></i>Toprak Direnci (Loop Empedans)</span>
+                                <span class="text-accentGreen font-bold">&lt; 2.0 Ohm</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-span-7 space-y-6">
+                    <h2 class="font-serif text-3xl md:text-4xl text-white font-bold">Biz Sadece Radyasyonu Kesmiyoruz; Hayat Kurtarıyoruz!</h2>
+                    <p class="text-lightText/85 text-lg">
+                        İletken bir zırhlama malzemesini topraklamasız bırakmak, elektrik sızıntısı anında duvarı bir çarpılma yüzeyine dönüştürebilir. Faraday Mimarlık olarak, sistemi kurmadan önce evinizde sıfır kaçak akım güvencesi sunuyoruz.
+                    </p>
+                    <p class="text-lightText/70 text-sm">
+                        Uygulama öncesinde hazırladığımız **Teknik Elektrik Şartnamesi** ile iç mimarınızın ve elektrikçinizin yapması gereken tüm kaçak akım rölesi revizyonlarını ve güvenli izolasyon bariyerlerini biz raporluyoruz.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. İÇ MİMARLAR VE PEYZAJCILAR (B2B) -->
+    <section id="b2b" class="py-24 border-t border-accentGreen/20 bg-gradient-to-b from-darkBg to-cardBg/30">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="bg-cardBg/50 border border-accentGreen/30 rounded-3xl p-8 md:p-16 relative overflow-hidden">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_120%,rgba(6,214,160,0.05),transparent_40%)]"></div>
+                <div class="relative z-10 max-w-3xl space-y-8">
+                    <span class="px-3 py-1 rounded bg-accentGreen/10 border border-accentGreen/20 text-accentGreen text-xs font-bold uppercase tracking-wider">İç Mimarlar & Peyzaj Mimarları İçin Özel</span>
+                    <h2 class="font-serif text-3xl md:text-5xl text-white font-bold leading-tight">Projenize Lüks ve Sağlık Katın: <span class="text-accentGreen">Bio-Shielding</span> Entegrasyonu</h2>
+                    <p class="text-lightText/80 text-lg">
+                        Lüks villa ve konut projelerinizde seçkin müşterilerinize sunabileceğiniz yepyeni bir "Sıfır Radyasyon Bölgesi" (EMF-Free Zone) konsepti. Uygulama ve şantiye yükü tamamen bizim kontrolümüzdeyken, projenizin değerini artırın ve cirodan yüksek komisyon payı elde edin.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://wa.me/905000000000?text=İç%20mimarım,%20biyolojik%20kalkanlama%20ortaklığı%20için%20görüşmek%20istiyorum." 
+                           target="_blank" 
+                           class="px-8 py-4 bg-accentGreen hover:bg-accentGreen/90 text-darkBg font-bold rounded-xl transition-all shadow-lg shadow-accentGreen/20">
+                            <i class="fa-solid fa-handshake mr-2"></i>İş Birliği Randevusu Al
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. FOOTER -->
+    <footer class="py-12 border-t border-white/5 bg-darkBg text-center text-sm text-lightText/50">
+        <div class="max-w-7xl mx-auto px-6 space-y-4">
+            <p>&copy; 2026 Faraday Mimarlık. Tüm hakları saklıdır. Bu site Blogger altyapısı ile barındırılmaktadır.</p>
+            <p class="text-xs">Uyarı: Sunulan hizmetler bilimsel Faraday kafesi ve elektrik tesisat testleri üzerine kurulu olup, tıbbi teşhis ve tedavi hizmeti değildir.</p>
+        </div>
+    </footer>
+
+    <!-- INTERAKTIF RISK SIMULATORU SCRIPT -->
+    <script>
+        function updateSimulator() {
+            const wifi = document.getElementById('wifiSim').checked;
+            const cell = document.getElementById('cellSim').checked;
+            const plug = document.getElementById('plugSim').checked;
+
+            let emfValue = 0;
+            if (wifi) emfValue += 3.5;
+            if (cell) emfValue += 4.5;
+            if (plug) emfValue += 1.5;
+
+            const emfText = document.getElementById('emfText');
+            const emfBar = document.getElementById('emfBar');
+            const percent = (emfValue / 9.5) * 100;
+            
+            emfBar.style.width = percent + '%';
+            if (emfValue > 6) {
+                emfText.innerHTML = `ÇOK YÜKSEK (${emfValue.toFixed(1)} µW/cm²)`;
+                emfText.className = 'font-bold text-red-500';
+                emfBar.className = 'h-full bg-red-500 transition-all duration-300';
+            } else if (emfValue > 2) {
+                emfText.innerHTML = `ORTA SEVİYE (${emfValue.toFixed(1)} µW/cm²)`;
+                emfText.className = 'font-bold text-yellow-500';
+                emfBar.className = 'h-full bg-yellow-500 transition-all duration-300';
+            } else {
+                emfText.innerHTML = `MÜKEMMEL SEVİYE (${emfValue.toFixed(1)} µW/cm²)`;
+                emfText.className = 'font-bold text-accentGreen';
+                emfBar.className = 'h-full bg-accentGreen transition-all duration-300';
+            }
+
+            const melatoninText = document.getElementById('melatoninText');
+            const melatoninBar = document.getElementById('melatoninBar');
+            let mValue = 100 - (emfValue * 10);
+            if (mValue < 10) mValue = 10;
+
+            melatoninBar.style.width = mValue + '%';
+            if (mValue < 40) {
+                melatoninText.innerHTML = `Baskılanmış (-${(100 - mValue)}%)`;
+                melatoninText.className = 'font-bold text-red-400';
+                melatoninBar.className = 'h-full bg-red-400 transition-all duration-300';
+            } else if (mValue < 80) {
+                melatoninText.innerHTML = `Kısmi Düşüş (-${(100 - mValue)}%)`;
+                melatoninText.className = 'font-bold text-yellow-400';
+                melatoninBar.className = 'h-full bg-yellow-400 transition-all duration-300';
+            } else {
+                melatoninText.innerHTML = `Sağlıklı ve Kesintisiz (%${mValue})`;
+                melatoninText.className = 'font-bold text-accentGreen';
+                melatoninBar.className = 'h-full bg-accentGreen transition-all duration-300';
+            }
+        }
+        updateSimulator();
+    </script>
+</body>
+</html>
+
+```
